@@ -77,7 +77,7 @@ namespace LiveCode2019
                 int k;
                 if (!int.TryParse("12", out k))
                 {
-                    throw new FormatException("asdf");
+                    throw new FormatException("asdf"); /// FORKERT!!!
                 }
             }
             catch (Exception)

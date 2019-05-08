@@ -9,8 +9,19 @@ using System.Threading.Tasks;
 
 namespace LiveCode2019
 {
+
+
+
+
+
     class Program
     {
+
+        static List<GameObject> gameobjects = new List<GameObject>();
+
+        void
+
+
 
         private static SDel foo;
 

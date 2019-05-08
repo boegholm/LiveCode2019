@@ -14,7 +14,8 @@ namespace LiveCode2019
     {
         public void SendFile(string filename, string receiver)
         {
-            string data = Readfile(filename);
+            int readstatus;
+            string data = Readfile(filename, out readstatus);
             SendData(data, receiver);
         }
 
@@ -27,6 +28,8 @@ namespace LiveCode2019
 
 
             /// ikke adgang til fil
+            ///
+            /// if error
             status = 2;
             ///
             ///

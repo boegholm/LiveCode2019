@@ -16,7 +16,8 @@ namespace LiveCode2019
         {
             int readstatus;
             string data = Readfile(filename, out readstatus);
-            SendData(data, receiver);
+
+            int sendstatus = SendData(data, receiver);
         }
 
         private string Readfile(string filename, out int status)
@@ -39,9 +40,17 @@ namespace LiveCode2019
             return "";
         }
 
-        private void SendData(string data, string r)
+        private int SendData(string data, string r)
         {
+            // hvis modtager ikke fundet
+            return 1;
+
+            // hvis forbindelse afbrudt
+            return 2;
+
             // complex
+
+            return 0;
         }
     }
 

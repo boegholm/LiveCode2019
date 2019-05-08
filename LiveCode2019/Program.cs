@@ -5,6 +5,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO;
+using System.Linq.Expressions;
 
 // https://github.com/boegholm/LiveCode2019
 
@@ -63,13 +64,15 @@ namespace LiveCode2019
     class FileSender
     {
 
-        public int SendFile(string filename, string receiver)
+        public void SendFile(string filename, string receiver)
         {
             FileReader fr = new FileReader();
             DataSender ds = new DataSender();
             string data = fr.Readfile(filename);
 
             ds.SendData(data, receiver);
+
+
         }
 
 
@@ -109,12 +112,16 @@ namespace LiveCode2019
         {
             FileSender fs = new FileSender();
 
-            string rec = Console.ReadLine();
+            try
+            {
+                string rec = Console.ReadLine();
 
-            fs.SendFile("brev.txt", "127.0.0.1");
+                fs.SendFile("brev.txt", "127.0.0.1");
 
 
-            Console.ReadKey();
+                Console.ReadKey();
+
+            }
 
 
             //PrintVehicle(new Buggy());

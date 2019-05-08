@@ -36,6 +36,9 @@ namespace LiveCode2019
         }
     }
 
+    
+
+
 
 
     class Program
@@ -43,7 +46,7 @@ namespace LiveCode2019
 
         public static void Foo(SDel p)
         {
-            p("foo");
+            
         }
 
 
@@ -57,7 +60,11 @@ namespace LiveCode2019
             aa.BalanceLowEvent += account => Console.WriteLine(account.Name + "  via lambda");
             aa.Balance = 10;
 
-
+            Enumerable.Range(0, 10).Select(v => Enumerable.Range(v, 10).ToArray()).Aggregate(new List<int>(), (ints, ints1) =>
+            {
+                ints.AddRange(ints1);
+                return ints;
+            });
             
 
             Console.ReadKey();

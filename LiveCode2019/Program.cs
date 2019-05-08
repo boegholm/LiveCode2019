@@ -32,15 +32,22 @@ namespace LiveCode2019
 
         }
 
+        public static void Foo(SDel p)
+        {
+            p("foo");
+        }
+
+
+        private static SDel foo;
 
         static void Main(string[] args)
         {
-            SDel print = Console.WriteLine;
+            foo("sadf");
 
 
-            print("hej");
+            
 
-            Console.ReadKey()
+            Console.ReadKey();
         }
     }
 

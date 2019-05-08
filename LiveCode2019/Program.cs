@@ -26,7 +26,8 @@ namespace LiveCode2019
             {
                 if (value <= 50)
                 {
-                    BalanceLowEvent(this);
+                    if(BalanceLowEvent!=null)
+                        BalanceLowEvent(this);
                 }
                 _balance = value;
             }
@@ -49,10 +50,15 @@ namespace LiveCode2019
         static void Main(string[] args)
         {
             Account aa  = new Account(10);
-
+            aa.BalanceLowEvent += AaOnBalanceLowEvent;
             
 
             Console.ReadKey();
+        }
+
+        private static void AaOnBalanceLowEvent(Account a)
+        {
+            Console.WriteLine($"Account : {a.Name} has low balance: {a.Balance}");
         }
     }
 

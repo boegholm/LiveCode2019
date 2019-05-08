@@ -10,19 +10,22 @@ using System.IO;
 
 namespace LiveCode2019
 {
+
+    class NoReceiverException : Exception
+    {
+        public NoReceiverException(string message) : base(message)
+        {
+        }
+    }
+
     class DataSender
     {
-        public  int SendData(string data, string r)
+        public  void SendData(string data, string r)
         {
             // hvis modtager ikke fundet
-            return 1;
+            throw new NoReceiverException(r);
 
-            // hvis forbindelse afbrudt
-            return 2;
-
-            // complex
-
-            return 0;
+            // send
         }
 
     }
@@ -49,9 +52,9 @@ namespace LiveCode2019
             ///
             ///
 
-            
 
-            return "";
+
+            return File.ReadAllText(filename);
         }
         private const int FILENOTFOUNDERROR = 1;
     }

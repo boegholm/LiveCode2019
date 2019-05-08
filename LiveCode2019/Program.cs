@@ -84,6 +84,14 @@ namespace LiveCode2019
 
             Console.WriteLine();
             var vs = plist.GroupBy(v => v.Efternavn);
+            foreach (IGrouping<string, Person> grouping in vs)
+            {
+                Console.WriteLine(grouping.Key);
+                foreach (Person person in grouping)
+                {
+                    Console.WriteLine(person);
+                }
+            }
             Console.WriteLine(vs);
 
 

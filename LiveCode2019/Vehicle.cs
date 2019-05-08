@@ -1,12 +1,12 @@
 ﻿namespace LiveCode2019
 {
 
-    interface IGameObject
+    interface IPositionable
     {
         Vector3 Position { get; set; }
     }
 
-    class Helikopter : IGameObject
+    class Helikopter : IPositionable
     {
         public Vector3 Position { get; set; }
     }

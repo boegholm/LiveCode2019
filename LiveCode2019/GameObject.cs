@@ -1,6 +1,6 @@
 ﻿namespace LiveCode2019
 {
-    public abstract class GameObject : IGameObject
+    public abstract class GameObject : IPositionable
     {
         public GameObject()
         {

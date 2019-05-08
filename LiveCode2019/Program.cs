@@ -9,26 +9,9 @@ using System.Threading.Tasks;
 
 namespace LiveCode2019
 {
-
-    class FileSender
+    class FileReader
     {
-        private const int FILENOTFOUNDERROR = 1;
-        public  SendFile(string filename, string receiver)
-        {
-            int readstatus;
-            string data = Readfile(filename, out readstatus);
-            if (readstatus == 0)
-            {
-                int sendstatus = SendData(data, receiver);
-
-            }
-            else
-            {
-                
-            }
-        }
-
-        private string Readfile(string filename, out int status)
+        public string Readfile(string filename, out int status)
         {
             /// complex implementation
             ///
@@ -47,6 +30,29 @@ namespace LiveCode2019
 
             return "";
         }
+        private const int FILENOTFOUNDERROR = 1;
+    }
+
+
+    class FileSender
+    {
+
+        public  SendFile(string filename, string receiver)
+        {
+            int readstatus;
+            string data = Readfile(filename, out readstatus);
+            if (readstatus == 0)
+            {
+                int sendstatus = SendData(data, receiver);
+
+            }
+            else
+            {
+                
+            }
+        }
+
+
 
         private int SendData(string data, string r)
         {

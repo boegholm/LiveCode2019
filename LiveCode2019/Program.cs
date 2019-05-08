@@ -12,12 +12,20 @@ namespace LiveCode2019
 
     class FileSender
     {
-        public void SendFile(string filename, string receiver)
+        private const int FILENOTFOUNDERROR = 1;
+        public  SendFile(string filename, string receiver)
         {
             int readstatus;
             string data = Readfile(filename, out readstatus);
+            if (readstatus == 0)
+            {
+                int sendstatus = SendData(data, receiver);
 
-            int sendstatus = SendData(data, receiver);
+            }
+            else
+            {
+                
+            }
         }
 
         private string Readfile(string filename, out int status)
@@ -25,7 +33,7 @@ namespace LiveCode2019
             /// complex implementation
             ///
             /// fil ikke fundet
-            status = 1;
+            status = FILENOTFOUNDERROR;
 
 
             /// ikke adgang til fil

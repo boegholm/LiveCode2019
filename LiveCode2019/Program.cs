@@ -12,14 +12,24 @@ namespace LiveCode2019
     delegate void BalanceLow(Account a);
     class Account
     {
+        public Account(int initialbalance)
+        {
+            Balance = initialbalance;
+        }
         public event BalanceLow BalanceLowEvent;
 
         private int _balance = 0;
-
         public int Balance
         {
             get { return _balance; }
-            set { _balance = value; }
+            set
+            {
+                if (_balance <= 50)
+                {
+                    BalanceLowEvent(this);
+                }
+                _balance = value;
+            }
         }
     }
 
@@ -27,26 +37,6 @@ namespace LiveCode2019
 
     class Program
     {
-        
-
-
-
-
-
-        public static void PrintObject(object o)
-        {
-
-        }
-
-        public static void PrintGameObject(GameObject go)
-        {
-
-        }
-
-        public static void PrintVehicle(Vehicle veh)
-        {
-
-        }
 
         public static void Foo(SDel p)
         {
@@ -58,6 +48,12 @@ namespace LiveCode2019
 
         static void Main(string[] args)
         {
+            Account aa  = new Account(100);
+
+
+
+
+
             foo = s => Console.Write(s);
             foo = Console.WriteLine;
 

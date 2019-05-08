@@ -19,7 +19,10 @@ namespace LiveCode2019
 
         static List<GameObject> gameobjects = new List<GameObject>();
 
-        void
+        void PrintGO(GameObject g)
+        {
+            Console.WriteLine(g.Position);
+        }
 
 
 

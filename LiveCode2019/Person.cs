@@ -4,7 +4,10 @@ namespace LiveCode2019
 {
     class Person  : Object
     {
-
+        public Person()
+        {
+            Console.WriteLine("Ny person!");
+        }
         public Person SetNavn(string navn)
         {
             this.Navn = navn;

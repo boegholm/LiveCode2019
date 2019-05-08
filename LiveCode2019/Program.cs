@@ -34,6 +34,12 @@ namespace LiveCode2019
 
         static void Main(string[] args)
         {
+            new Person().SetAlder(1);
+
+
+            Console.ReadKey();
+
+
             PrintVehicle(new Buggy());
             PrintVehicle(new Tank());            
 

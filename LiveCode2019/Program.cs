@@ -39,12 +39,18 @@ namespace LiveCode2019
 
 
 
-    class Person
+    class Person  : Object
     {
+
         public string Navn { get; set; }
         public string Efternavn { get; set; }
 
         public int Alder { get; set; }
+
+        public override string ToString()
+        {
+            return $"{Navn} {Efternavn} ({Alder})";
+        }
     }
 
 
@@ -68,6 +74,8 @@ namespace LiveCode2019
             plist.Add(new Person(){Navn = "Thomas", Efternavn = "B"});
             plist.Add(new Person(){Navn= "hans" , Efternavn = "H"});
             plist.Add(new Person(){Navn = "Henrik", Efternavn = "B"});
+
+            plist.ForEach(Console.WriteLine);
 
 
 

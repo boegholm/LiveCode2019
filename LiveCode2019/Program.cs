@@ -9,6 +9,16 @@ using System.Threading.Tasks;
 
 namespace LiveCode2019
 {
+    delegate void BalanceLow(Account a);
+    class Account
+    {
+        public event BalanceLow BalanceLowEvent;
+
+        public int Balance { get; set; }
+    }
+
+
+
     class Program
     {
         

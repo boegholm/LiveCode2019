@@ -115,22 +115,8 @@ namespace LiveCode2019
             {
                 string rec = Console.ReadLine();
                 fs.SendFile("brev.txt", "127.0.0.1");
-
-
                 int k;
-
-                while(!int.TryParse(Console.ReadLine(), out k)){ }
-
-                try
-                {
-                    int.Parse(Console.ReadLine())
-
-                }
-                catch (FormatException e)
-                {
-
-                    Console.WriteLine("Det du skrev er ikke et tal");
-                }
+                k  = int.Parse(Console.ReadLine());
 
                 Console.ReadKey();
 
@@ -142,6 +128,10 @@ namespace LiveCode2019
             catch (FileNotFoundException)
             {
                 Console.WriteLine("Du har ikke lavet fil");
+            }
+            catch (FormatException e)
+            {
+                Console.WriteLine("Det du skrev er ikke et tal");
             }
             catch (Exception e)
             {

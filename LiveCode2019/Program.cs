@@ -36,7 +36,17 @@ namespace LiveCode2019
         }
     }
 
-    
+
+
+
+    class Person
+    {
+        public string Navn { get; set; }
+        public string Efternavn { get; set; }
+
+        public int Alder { get; set; }
+    }
+
 
 
 
@@ -54,13 +64,26 @@ namespace LiveCode2019
 
         static void Main(string[] args)
         {
+            List<Person> plist = new List<Person>();
+            plist.Add(new Person(){Navn = "Thomas", Efternavn = "B"});
+            plist.Add(new Person(){Navn= "hans" , Efternavn = "H"});
+            plist.Add(new Person(){Navn = "Henrik", Efternavn = "B"});
+
+
+
+
+
+
+
             Account aa  = new Account(10, "Min account");
             aa.BalanceLowEvent += AaOnBalanceLowEvent;
 
             aa.BalanceLowEvent += account => Console.WriteLine(account.Name + "  via lambda");
             aa.Balance = 10;
 
-            Enumerable.Range(0, 10).Select(v => Enumerable.Range(v, 10).ToArray()).Aggregate(new List<int>(), (ints, ints1) =>
+            Enumerable.Range(0, 10)
+                .Select(v => Enumerable.Range(v, 10).ToArray())
+                .Aggregate(new List<int>(), (ints, ints1) =>
             {
                 ints.AddRange(ints1);
                 return ints;
@@ -77,10 +100,7 @@ namespace LiveCode2019
     }
 
 
-    class Person
-    {
 
-    }
 
     delegate void SDel(string s);
 }

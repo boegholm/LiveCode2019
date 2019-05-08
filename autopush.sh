@@ -12,7 +12,10 @@ fi
 while true; do 
 git add .
 git commit -m auto_`date +%F_%R`
-git push
+while git push; do
+  echo failed. retrying...
+  sleep 20;
+done
 echo Waiting 5 minutes...
 sleep 300
 done

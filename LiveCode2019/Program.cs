@@ -27,6 +27,11 @@ namespace LiveCode2019
 
         public static void PrintVehicle(Vehicle veh)
         {
+            if (veh is Buggy)
+            {
+                Buggy b = (Buggy) veh;
+                Console.WriteLine("veh is buggy" + b );
+            }
             Console.WriteLine(veh.Cost);
         }
 

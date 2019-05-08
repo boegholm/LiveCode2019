@@ -22,14 +22,22 @@ namespace LiveCode2019
         void PrintGO(GameObject g)
         {
             Console.WriteLine(g.Position);
+
         }
 
+        public static void PrintVehicle(Vehicle veh)
+        {
 
+        }
 
         private static SDel foo;
 
         static void Main(string[] args)
         {
+            new Program().PrintGO(new Buggy());
+            
+
+
             List<Person> plist = new List<Person>();
             plist.Add(new Person(){Navn = "Thomas", Efternavn = "B", Alder = 10});
             plist.Add(new Person(){Navn= "hans" , Efternavn = "H", Alder = 20});

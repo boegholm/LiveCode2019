@@ -18,15 +18,27 @@ namespace LiveCode2019
             SendData(data, receiver);
         }
 
+        private string Readfile(string filename, out int status)
+        {
+            /// complex implementation
+            ///
+            /// fil ikke fundet
+            status = 1;
+
+
+            /// ikke adgang til fil
+            status = 2;
+            ///
+            ///
+
+            status = 0;
+
+            return "";
+        }
 
         private void SendData(string data, string r)
         {
             // complex
-        }
-        private string Readfile(string filename )
-        {
-            /// complex implementation
-            return "";
         }
     }
 

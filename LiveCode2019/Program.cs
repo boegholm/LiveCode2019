@@ -75,11 +75,18 @@ namespace LiveCode2019
             plist.Add(new Person(){Navn= "hans" , Efternavn = "H"});
             plist.Add(new Person(){Navn = "Henrik", Efternavn = "B"});
 
+
+            
+
+
             plist.ForEach(Console.WriteLine);
 
+            IEnumerable<string> vs = plist.Select(p => p.Navn);
+            vs.ToList().ForEach(Console.WriteLine);
 
 
-
+            Console.ReadKey();
+            return;
 
 
 

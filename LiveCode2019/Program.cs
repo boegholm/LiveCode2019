@@ -27,15 +27,15 @@ namespace LiveCode2019
 
         public static void PrintVehicle(Vehicle veh)
         {
-
+            Console.WriteLine(veh.Cost);
         }
 
         private static SDel foo;
 
         static void Main(string[] args)
         {
-            new Program().PrintGO(new Buggy());
-            
+            PrintVehicle(new Buggy());
+            PrintVehicle(new Tank());            
 
 
             List<Person> plist = new List<Person>();

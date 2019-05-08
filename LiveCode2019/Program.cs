@@ -114,9 +114,23 @@ namespace LiveCode2019
             try
             {
                 string rec = Console.ReadLine();
-
                 fs.SendFile("brev.txt", "127.0.0.1");
 
+
+                int k;
+
+                while(!int.TryParse(Console.ReadLine(), out k)){ }
+
+                try
+                {
+                    int.Parse(Console.ReadLine())
+
+                }
+                catch (FormatException e)
+                {
+
+                    Console.WriteLine("Det du skrev er ikke et tal");
+                }
 
                 Console.ReadKey();
 

@@ -11,7 +11,7 @@ namespace LiveCode2019
 {
     class Program
     {
-        private static List<Action<string>> actions = new List<Action<string>>();
+        
 
 
 
@@ -35,9 +35,20 @@ namespace LiveCode2019
 
         static void Main(string[] args)
         {
+            SDel print = Console.WriteLine;
 
-            Console.ReadKey();
-            List<GameObject> objects = new List<GameObject>(){new Buggy(), new Tank()};
+
+            print("hej");
+
+            Console.ReadKey()
         }
     }
+
+
+    class Person
+    {
+
+    }
+
+    delegate void SDel(string s);
 }

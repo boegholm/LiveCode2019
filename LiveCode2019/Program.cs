@@ -9,6 +9,23 @@ using System.Threading.Tasks;
 
 namespace LiveCode2019
 {
+    class DataSender
+    {
+        public  int SendData(string data, string r)
+        {
+            // hvis modtager ikke fundet
+            return 1;
+
+            // hvis forbindelse afbrudt
+            return 2;
+
+            // complex
+
+            return 0;
+        }
+
+    }
+
     class FileReader
     {
         public string Readfile(string filename, out int status)
@@ -37,35 +54,27 @@ namespace LiveCode2019
     class FileSender
     {
 
-        public  SendFile(string filename, string receiver)
+        public int SendFile(string filename, string receiver)
         {
             int readstatus;
-            string data = Readfile(filename, out readstatus);
+            FileReader fr = new FileReader();
+            DataSender ds = new DataSender();
+            string data = fr.Readfile(filename, out readstatus);
             if (readstatus == 0)
             {
-                int sendstatus = SendData(data, receiver);
+                int sendstatus = ds.SendData(data, receiver);
 
             }
             else
             {
                 
             }
-        }
-
-
-
-        private int SendData(string data, string r)
-        {
-            // hvis modtager ikke fundet
-            return 1;
-
-            // hvis forbindelse afbrudt
-            return 2;
-
-            // complex
 
             return 0;
         }
+
+
+
     }
 
 

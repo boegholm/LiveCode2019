@@ -71,8 +71,6 @@ namespace LiveCode2019
             string data = fr.Readfile(filename);
 
             ds.SendData(data, receiver);
-
-
         }
 
 
@@ -112,6 +110,7 @@ namespace LiveCode2019
         {
             FileSender fs = new FileSender();
 
+
             try
             {
                 string rec = Console.ReadLine();
@@ -121,6 +120,18 @@ namespace LiveCode2019
 
                 Console.ReadKey();
 
+            }
+            catch (AccessViolationException e)
+            {
+                Console.WriteLine("Du har ikke adgang til filen.");
+            }
+            catch (FileNotFoundException)
+            {
+                Console.WriteLine("Du har ikke lavet fil");
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Unknown error");
             }
 
 

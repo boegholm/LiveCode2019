@@ -12,8 +12,10 @@ namespace LiveCode2019
     delegate void BalanceLow(Account a);
     class Account
     {
-        public Account(int initialbalance)
+        public string Name { get; set; }
+        public Account(int initialbalance, string name)
         {
+            Name = name;
             Balance = initialbalance;
         }
         public event BalanceLow BalanceLowEvent;
@@ -49,8 +51,13 @@ namespace LiveCode2019
 
         static void Main(string[] args)
         {
-            Account aa  = new Account(10);
+            Account aa  = new Account(10, "Min account");
             aa.BalanceLowEvent += AaOnBalanceLowEvent;
+
+            aa.BalanceLowEvent += account => Console.WriteLine(account.Name + "  via lambda");
+            aa.Balance = 10;
+
+
             
 
             Console.ReadKey();

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 
 // https://github.com/boegholm/LiveCode2019
 
@@ -28,22 +29,27 @@ namespace LiveCode2019
 
     class FileReader
     {
-        public string Readfile(string filename, out int status)
+        public string Readfile(string filename)
         {
+            
             /// complex implementation
             ///
             /// fil ikke fundet
-            status = FILENOTFOUNDERROR;
+            if(!File.Exists(filename))
+                throw new FileNotFoundException();
 
 
             /// ikke adgang til fil
             ///
             /// if error
-            status = 2;
+            //if(File.GetAccessControl(filename)
+            throw new AccessViolationException(filename);
+
+
             ///
             ///
 
-            status = 0;
+            
 
             return "";
         }

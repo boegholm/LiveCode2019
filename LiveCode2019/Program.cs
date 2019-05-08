@@ -65,21 +65,11 @@ namespace LiveCode2019
 
         public int SendFile(string filename, string receiver)
         {
-            int readstatus;
             FileReader fr = new FileReader();
             DataSender ds = new DataSender();
-            string data = fr.Readfile(filename, out readstatus);
-            if (readstatus == 0)
-            {
-                int sendstatus = ds.SendData(data, receiver);
+            string data = fr.Readfile(filename);
 
-            }
-            else
-            {
-                
-            }
-
-            return 0;
+            ds.SendData(data, receiver);
         }
 
 
@@ -94,37 +84,41 @@ namespace LiveCode2019
 
     class Program
     {
+/*
+        //static List<GameObject> gameobjects = new List<GameObject>();
 
-        static List<GameObject> gameobjects = new List<GameObject>();
+        //void PrintGO(GameObject g)
+        //{
+        //    Console.WriteLine(g.Position);
 
-        void PrintGO(GameObject g)
-        {
-            Console.WriteLine(g.Position);
+        //}
 
-        }
+        //public static void PrintVehicle(Vehicle veh)
+        //{
+        //    if (veh is Buggy)
+        //    {
+        //        Buggy b = (Buggy) veh;
+        //        Console.WriteLine("veh is buggy" + b );
+        //    }
+        //    Console.WriteLine(veh.Cost);
+        //}
 
-        public static void PrintVehicle(Vehicle veh)
-        {
-            if (veh is Buggy)
-            {
-                Buggy b = (Buggy) veh;
-                Console.WriteLine("veh is buggy" + b );
-            }
-            Console.WriteLine(veh.Cost);
-        }
-
-        private static SDel foo;
-
+        //private static SDel foo;
+        */
         static void Main(string[] args)
         {
-            new Person().SetAlder(1);
+            FileSender fs = new FileSender();
+
+            string rec = Console.ReadLine();
+
+            fs.SendFile("brev.txt", "127.0.0.1");
 
 
             Console.ReadKey();
 
 
-            PrintVehicle(new Buggy());
-            PrintVehicle(new Tank());            
+            //PrintVehicle(new Buggy());
+            //PrintVehicle(new Tank());            
 
 
             List<Person> plist = new List<Person>();

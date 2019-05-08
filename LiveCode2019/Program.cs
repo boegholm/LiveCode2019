@@ -24,7 +24,7 @@ namespace LiveCode2019
             get { return _balance; }
             set
             {
-                if (_balance <= 50)
+                if (value <= 50)
                 {
                     BalanceLowEvent(this);
                 }
@@ -48,17 +48,7 @@ namespace LiveCode2019
 
         static void Main(string[] args)
         {
-            Account aa  = new Account(100);
-
-
-
-
-
-            foo = s => Console.Write(s);
-            foo = Console.WriteLine;
-
-            foo("sadf");
-
+            Account aa  = new Account(10);
 
             
 

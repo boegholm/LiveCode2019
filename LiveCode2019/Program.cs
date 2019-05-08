@@ -74,6 +74,7 @@ namespace LiveCode2019
             plist.Add(new Person(){Navn = "Thomas", Efternavn = "B", Alder = 10});
             plist.Add(new Person(){Navn= "hans" , Efternavn = "H", Alder = 20});
             plist.Add(new Person(){Navn = "Henrik", Efternavn = "B", Alder=2});
+            
 
 
             
@@ -82,11 +83,8 @@ namespace LiveCode2019
             plist.ForEach(Console.WriteLine);
 
             Console.WriteLine();
-            IEnumerable<string> vs = 
-                plist
-                .Where(p=>p.Alder>10)
-                .Select(p => p.Navn);
-            vs.ToList().ForEach(Console.WriteLine);
+            var vs = plist.GroupBy(v => v.Efternavn);
+            Console.WriteLine(vs);
 
 
             Console.ReadKey();

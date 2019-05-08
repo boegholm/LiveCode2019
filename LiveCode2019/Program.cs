@@ -71,6 +71,22 @@ namespace LiveCode2019
             string data = fr.Readfile(filename);
 
             ds.SendData(data, receiver);
+
+            try
+            {
+                int k;
+                if (!int.TryParse("12", out k))
+                {
+                    throw new FormatException("asdf");
+                }
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("forkert...");
+            }
+
+
+
         }
 
 

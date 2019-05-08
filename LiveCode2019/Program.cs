@@ -64,7 +64,7 @@ namespace LiveCode2019
             {
                 ints.AddRange(ints1);
                 return ints;
-            });
+            }).ToArray();
             
 
             Console.ReadKey();

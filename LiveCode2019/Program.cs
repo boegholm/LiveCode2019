@@ -10,6 +10,12 @@ namespace LiveCode2019
 {
     class Program
     {
+        private static List<Action<string>> actions = new List<Action<string>>();
+
+
+
+
+
         public static void PrintObject(object o)
         {
 

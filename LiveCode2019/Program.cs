@@ -64,7 +64,7 @@ namespace LiveCode2019
     class FileSender
     {
 
-        public void SendFile(string filename, string receiver)
+        public virtual void SendFile(string filename, string receiver)
         {
             FileReader fr = new FileReader();
             DataSender ds = new DataSender();
@@ -76,6 +76,15 @@ namespace LiveCode2019
 
 
     }
+
+    class SuperFileSender : FileSender
+    {
+        public void SendFile(string file, string rec)
+        {
+
+        }
+    }
+
 
 
 
@@ -129,13 +138,13 @@ namespace LiveCode2019
             {
                 Console.WriteLine("Du har ikke lavet fil");
             }
-            catch (FormatException e)
-            {
-                Console.WriteLine("Det du skrev er ikke et tal");
-            }
             catch (Exception e)
             {
                 Console.WriteLine("Unknown error");
+            }
+            catch (FormatException e)
+            {
+                Console.WriteLine("Det du skrev er ikke et tal");
             }
 
 

@@ -10,6 +10,28 @@ using System.Threading.Tasks;
 namespace LiveCode2019
 {
 
+    class FileSender
+    {
+        public void SendFile(string filename, string receiver)
+        {
+            string data = Readfile(filename);
+            SendData(data, receiver);
+        }
+
+
+        private void SendData(string data, string r)
+        {
+            // complex
+        }
+        private string Readfile(string filename )
+        {
+            /// complex implementation
+            return "";
+        }
+    }
+
+
+
 
 
 

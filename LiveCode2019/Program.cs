@@ -9,62 +9,8 @@ using System.Threading.Tasks;
 
 namespace LiveCode2019
 {
-    delegate void BalanceLow(Account a);
-    class Account
-    {
-        public string Name { get; set; }
-        public Account(int initialbalance, string name)
-        {
-            Name = name;
-            Balance = initialbalance;
-        }
-        public event BalanceLow BalanceLowEvent;
-
-        private int _balance = 0;
-        public int Balance
-        {
-            get { return _balance; }
-            set
-            {
-                if (value <= 50)
-                {
-                    if(BalanceLowEvent!=null)
-                        BalanceLowEvent(this);
-                }
-                _balance = value;
-            }
-        }
-    }
-
-
-
-
-    class Person  : Object
-    {
-
-        public string Navn { get; set; }
-        public string Efternavn { get; set; }
-
-        public int Alder { get; set; }
-
-        public override string ToString()
-        {
-            return $"{Navn} {Efternavn} ({Alder})";
-        }
-    }
-
-
-
-
-
     class Program
     {
-
-        public static void Foo(SDel p)
-        {
-            
-        }
-
 
         private static SDel foo;
 
@@ -75,6 +21,9 @@ namespace LiveCode2019
             plist.Add(new Person(){Navn= "hans" , Efternavn = "H", Alder = 20});
             plist.Add(new Person(){Navn = "Henrik", Efternavn = "B", Alder=2});
             
+            Person p = new Person().SetAlder(10).SetNavn("Thomas");
+            Console.WriteLine(p);
+            Console.ReadKey();
 
 
             
@@ -84,6 +33,8 @@ namespace LiveCode2019
 
             Console.WriteLine();
             var vs = plist.GroupBy(v => v.Efternavn);
+
+
             foreach (IGrouping<string, Person> grouping in vs)
             {
                 Console.WriteLine(grouping.Key);
@@ -123,9 +74,4 @@ namespace LiveCode2019
             Console.WriteLine($"Account : {a.Name} has low balance: {a.Balance}");
         }
     }
-
-
-
-
-    delegate void SDel(string s);
 }

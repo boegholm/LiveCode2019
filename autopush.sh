@@ -13,8 +13,8 @@ while true; do
 git add .
 git commit -m auto_`date +%F_%R`
 git push
-echo Waiting 5 minutes...
-sleep 300
+echo Waiting 2 minutes...
+sleep 120
 done
 
 

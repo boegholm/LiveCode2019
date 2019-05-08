@@ -14,7 +14,13 @@ namespace LiveCode2019
     {
         public event BalanceLow BalanceLowEvent;
 
-        public int Balance { get; set; }
+        private int _balance = 0;
+
+        public int Balance
+        {
+            get { return _balance; }
+            set { _balance = value; }
+        }
     }
 
 

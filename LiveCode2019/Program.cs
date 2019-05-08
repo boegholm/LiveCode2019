@@ -71,9 +71,9 @@ namespace LiveCode2019
         static void Main(string[] args)
         {
             List<Person> plist = new List<Person>();
-            plist.Add(new Person(){Navn = "Thomas", Efternavn = "B"});
-            plist.Add(new Person(){Navn= "hans" , Efternavn = "H"});
-            plist.Add(new Person(){Navn = "Henrik", Efternavn = "B"});
+            plist.Add(new Person(){Navn = "Thomas", Efternavn = "B", Alder = 10});
+            plist.Add(new Person(){Navn= "hans" , Efternavn = "H", Alder = 20});
+            plist.Add(new Person(){Navn = "Henrik", Efternavn = "B", Alder=2});
 
 
             
@@ -81,7 +81,11 @@ namespace LiveCode2019
 
             plist.ForEach(Console.WriteLine);
 
-            IEnumerable<string> vs = plist.Select(p => p.Navn);
+            Console.WriteLine();
+            IEnumerable<string> vs = 
+                plist
+                .Where(p=>p.Alder>10)
+                .Select(p => p.Navn);
             vs.ToList().ForEach(Console.WriteLine);
 
 

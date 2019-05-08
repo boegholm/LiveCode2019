@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -34,6 +35,8 @@ namespace LiveCode2019
 
         static void Main(string[] args)
         {
+
+            Console.ReadKey();
             List<GameObject> objects = new List<GameObject>(){new Buggy(), new Tank()};
         }
     }

@@ -43,6 +43,7 @@ namespace LiveCode2019
         static void Main(string[] args)
         {
             foo = s => Console.Write(s);
+            foo = Console.WriteLine;
 
             foo("sadf");
 
